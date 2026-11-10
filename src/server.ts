@@ -9,7 +9,7 @@ import {
 } from "./client.js";
 
 export const SERVER_NAME = "copyseeker";
-export const SERVER_VERSION = "2.0.1";
+export const SERVER_VERSION = "2.0.2";
 
 const DEFAULT_MAX_RESULTS = 25;
 

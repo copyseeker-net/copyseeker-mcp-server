@@ -4,12 +4,16 @@
   "title": "Copyseeker",
   "description": "Reverse image search, AI-generated image detection and NSFW detection from Copyseeker",
   "websiteUrl": "https://copyseeker.net/apis",
-  "version": "2.0.1",
+  "repository": {
+    "url": "https://github.com/copyseeker-net/copyseeker-mcp-server",
+    "source": "github"
+  },
+  "version": "2.0.2",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "copyseeker-mcp-server",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "transport": {
         "type": "stdio"
       },
