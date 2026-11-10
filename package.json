@@ -1,0 +1,54 @@
+{
+  "name": "copyseeker-mcp-server",
+  "version": "2.0.0",
+  "description": "MCP server for Copyseeker: reverse image search, AI image detection and NSFW detection for AI assistants",
+  "type": "module",
+  "bin": {
+    "copyseeker-mcp": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run build && node --test --import tsx \"test/**/*.test.ts\"",
+    "start": "node build/index.js",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.4.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.4.0",
+    "@types/node": "^20.19.0",
+    "tsx": "^4.23.0",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "copyseeker",
+    "reverse-image-search",
+    "ai-image-detection",
+    "nsfw-detection",
+    "image-search",
+    "copyright"
+  ],
+  "author": "Copyseeker <support@copyseeker.net>",
+  "license": "MIT",
+  "homepage": "https://copyseeker.net/apis",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/copyseeker/copyseeker-mcp-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/copyseeker/copyseeker-mcp-server/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "build/**/*",
+    "README.md",
+    "LICENSE"
+  ]
+}
