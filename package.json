@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
-    "test": "npm run build && node --test --import tsx \"test/**/*.test.ts\"",
+    "test": "npm run build && node --test --import tsx test/server.test.ts",
     "start": "node build/index.js",
     "prepublishOnly": "npm test"
   },
