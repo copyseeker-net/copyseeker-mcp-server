@@ -8,12 +8,12 @@
     "url": "https://github.com/copyseeker-net/copyseeker-mcp-server",
     "source": "github"
   },
-  "version": "2.0.2",
+  "version": "2.0.3",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "copyseeker-mcp-server",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "transport": {
         "type": "stdio"
       },

@@ -140,7 +140,7 @@ async function toError(response: Response): Promise<CopyseekerError> {
       return new CopyseekerError("API access needs a paid Copyseeker plan. See https://copyseeker.net/pricing.", code);
 
     case "QUOTA_EXHAUSTED":
-      return new CopyseekerError("The Copyseeker account has no searches left for this call. Top up at https://copyseeker.net/account#searches or wait for the monthly reset.", code);
+      return new CopyseekerError("The Copyseeker account has no credits left for this call. Top up at https://copyseeker.net/account#searches or wait for the monthly reset.", code);
 
     case "RATE_LIMITED": {
       const retryAfter = response.headers.get("Retry-After");
@@ -151,7 +151,7 @@ async function toError(response: Response): Promise<CopyseekerError> {
       return new CopyseekerError("Copyseeker could not read an image there. Use a direct link to the image file itself (not a web page that shows it), or a local file path. Nothing was charged.", code);
 
     case "SEARCH_FAILED":
-      return new CopyseekerError("The search failed on Copyseeker's side and its searches were refunded. Try again.", code);
+      return new CopyseekerError("The call failed on Copyseeker's side and its credits were refunded. Try again.", code);
 
     default:
       return new CopyseekerError(`Copyseeker answered HTTP ${response.status}${code ? ` (${code})` : ""}.`, code || `HTTP_${response.status}`);

@@ -93,7 +93,7 @@ describe("copyseeker MCP server", () => {
     const result = await call("reverse_image_search", { image: "https://img.example/quota.jpg" });
 
     assert.equal(result.isError, true);
-    assert.match(textOf(result), /no searches left.*account#searches/);
+    assert.match(textOf(result), /no credits left.*account#searches/);
   });
 
   it("passes on how long to wait when rate limited", async () => {

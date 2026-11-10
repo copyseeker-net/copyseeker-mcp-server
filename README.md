@@ -4,11 +4,11 @@ Give Claude, Cursor, VS Code Copilot, Windsurf, OpenAI Codex, Gemini CLI and any
 
 | Tool | What it does | Cost |
 |---|---|---|
-| `reverse_image_search` | Finds the web pages that show an image, ranked by prominence, with the copies each page uses | 1 search |
-| `detect_ai_image` | Tells whether an image is AI-generated, with a confidence score | 0.01 searches |
-| `detect_nsfw` | Tells whether an image contains nudity or sexual content, with a confidence score | 0.01 searches |
+| `reverse_image_search` | Finds the web pages that show an image, ranked by prominence, with the copies each page uses | 1 credit |
+| `detect_ai_image` | Tells whether an image is AI-generated, with a confidence score | 0.01 credits |
+| `detect_nsfw` | Tells whether an image contains nudity or sexual content, with a confidence score | 0.01 credits |
 
-Each tool takes a direct image URL or the path to a local image file (up to 20 MB). Calls draw from the same search balance as the website, Monitor and the [Copyseeker API](https://copyseeker.net/apis).
+Each tool takes a direct image URL or the path to a local image file (up to 20 MB). Calls draw from the same credit balance as the website, Monitor and the [Copyseeker API](https://copyseeker.net/apis).
 
 ## Requirements
 
