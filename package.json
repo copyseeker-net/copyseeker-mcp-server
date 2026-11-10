@@ -38,7 +38,7 @@
   "homepage": "https://copyseeker.net/apis",
   "repository": {
     "type": "git",
-    "url": "https://github.com/copyseeker/copyseeker-mcp-server.git"
+    "url": "git+https://github.com/copyseeker/copyseeker-mcp-server.git"
   },
   "bugs": {
     "url": "https://github.com/copyseeker/copyseeker-mcp-server/issues"
