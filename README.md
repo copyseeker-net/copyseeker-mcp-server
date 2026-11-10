@@ -1,6 +1,6 @@
 # Copyseeker MCP Server
 
-Give Claude, Cursor and other [MCP](https://modelcontextprotocol.io) clients three image tools from [Copyseeker](https://copyseeker.net):
+Give Claude, Cursor, VS Code Copilot, Windsurf, OpenAI Codex, Gemini CLI and any other [MCP](https://modelcontextprotocol.io) client three image tools from [Copyseeker](https://copyseeker.net):
 
 | Tool | What it does | Cost |
 |---|---|---|
@@ -41,9 +41,63 @@ Add this to `claude_desktop_config.json` (macOS: `~/Library/Application Support/
 }
 ```
 
-### Cursor and other clients
+### Cursor
 
-Use the same `command`, `args` and `env` as above in the client's MCP settings (Cursor: `~/.cursor/mcp.json`).
+Add the same `mcpServers` entry as for Claude Desktop to `~/.cursor/mcp.json` (all projects) or `.cursor/mcp.json` (one project).
+
+### VS Code (GitHub Copilot)
+
+Add this to `.vscode/mcp.json` in your project. VS Code asks for the key on first use and stores it securely:
+
+```json
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "copyseeker-api-key",
+      "description": "Copyseeker API key",
+      "password": true
+    }
+  ],
+  "servers": {
+    "copyseeker": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "copyseeker-mcp-server"],
+      "env": {
+        "COPYSEEKER_API_KEY": "${input:copyseeker-api-key}"
+      }
+    }
+  }
+}
+```
+
+Then use the tools from Copilot Chat in agent mode.
+
+### Windsurf
+
+Add the same `mcpServers` entry as for Claude Desktop to `~/.codeium/windsurf/mcp_config.json`.
+
+### OpenAI Codex CLI
+
+Add this to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.copyseeker]
+command = "npx"
+args = ["-y", "copyseeker-mcp-server"]
+env = { COPYSEEKER_API_KEY = "your_api_key" }
+```
+
+### Gemini CLI
+
+Add the same `mcpServers` entry as for Claude Desktop to `~/.gemini/settings.json`.
+
+### Other clients
+
+Any MCP client that can launch a local (stdio) server works. Configure it to run `npx -y copyseeker-mcp-server` with the `COPYSEEKER_API_KEY` environment variable set.
+
+ChatGPT connectors only accept remote MCP servers reached over HTTPS, so this local server does not work there.
 
 ## Examples
 

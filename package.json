@@ -1,7 +1,7 @@
 {
   "name": "copyseeker-mcp-server",
-  "version": "2.0.0",
-  "description": "MCP server for Copyseeker: reverse image search, AI image detection and NSFW detection for AI assistants",
+  "version": "2.0.1",
+  "description": "MCP server for Copyseeker: reverse image search, AI image detection and NSFW detection for Claude, Cursor, VS Code Copilot, Codex, Gemini CLI and other AI assistants",
   "type": "module",
   "bin": {
     "copyseeker-mcp": "build/index.js"
@@ -31,18 +31,20 @@
     "ai-image-detection",
     "nsfw-detection",
     "image-search",
-    "copyright"
+    "copyright",
+    "mcp-server",
+    "claude",
+    "cursor",
+    "vscode",
+    "copilot",
+    "codex",
+    "gemini",
+    "ai-detection",
+    "deepfake-detection"
   ],
   "author": "Copyseeker <support@copyseeker.net>",
   "license": "MIT",
   "homepage": "https://copyseeker.net/apis",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/copyseeker/copyseeker-mcp-server.git"
-  },
-  "bugs": {
-    "url": "https://github.com/copyseeker/copyseeker-mcp-server/issues"
-  },
   "engines": {
     "node": ">=20"
   },
@@ -50,5 +52,6 @@
     "build/**/*",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "mcpName": "net.copyseeker/mcp"
 }
